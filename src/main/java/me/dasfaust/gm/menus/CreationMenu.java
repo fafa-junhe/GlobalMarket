@@ -19,6 +19,7 @@ import me.dasfaust.gm.StorageHelper;
 import me.dasfaust.gm.config.Config.Defaults;
 import me.dasfaust.gm.storage.abs.MarketObject;
 import me.dasfaust.gm.tools.GMLogger;
+import me.dasfaust.gm.tools.LegacyUtil;
 import me.dasfaust.gm.tools.LocaleHandler;
 import me.dasfaust.gm.trade.ListingsHelper;
 import me.dasfaust.gm.trade.MarketListing;
@@ -35,7 +36,7 @@ public class CreationMenu extends MenuBase<MarketObject>
 		public String getItemId()
 		{
 			String configured = Core.instance.config().get(new Config.ConfigDefault<String>("menu_function_items.FUNC_CREATE_LISTING_CANCEL", null, null));
-			return configured != null ? configured : Core.isCauldron ? "minecraft:stained_glass_pane:14" : Material.STAINED_GLASS_PANE.toString() + ":14";
+			return configured != null ? configured : Core.isCauldron ? "minecraft:stained_glass_pane:14" : LegacyUtil.RED_STAINED_GLASS_PANE_ID;
 		}
 
 		@Override
@@ -201,7 +202,7 @@ public class CreationMenu extends MenuBase<MarketObject>
 		public String getItemId()
 		{
 			String configured = Core.instance.config().get(new Config.ConfigDefault<String>("menu_function_items.FUNC_CREATE_LISTING_CREATE", null, null));
-			return configured != null ? configured : Core.isCauldron ? "minecraft:stained_glass_pane:5" : Material.STAINED_GLASS_PANE.toString() + ":5";
+			return configured != null ? configured : Core.isCauldron ? "minecraft:stained_glass_pane:5" : LegacyUtil.LIME_STAINED_GLASS_PANE_ID;
 		}
 
 		@Override

@@ -21,6 +21,7 @@ import me.dasfaust.gm.menus.CreationMenu.CreationSession;
 import me.dasfaust.gm.menus.MenuBase.FunctionButton;
 import me.dasfaust.gm.storage.abs.StorageHandler;
 import me.dasfaust.gm.tools.GMLogger;
+import me.dasfaust.gm.tools.LegacyUtil;
 import me.dasfaust.gm.tools.LocaleHandler;
 
 public class Menus
@@ -123,7 +124,7 @@ public class Menus
 			@Override
 			public WrappedStack getItemStack(MarketViewer viewer, StorageHandler storage)
 			{
-				return new WrappedStack(new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 15));
+				return new WrappedStack(LegacyUtil.BLACK_STAINED_GLASS_PANE.clone());
 			}
 			
 			@Override
@@ -269,7 +270,7 @@ public class Menus
 			@Override
 			public WrappedStack getItemStack(MarketViewer viewer, StorageHandler storage)
 			{
-				return new WrappedStack(new ItemStack(Material.STAINED_GLASS_PANE, 1, (short) 15));
+				return new WrappedStack(LegacyUtil.BLACK_STAINED_GLASS_PANE.clone());
 			}
 
 			@Override
@@ -380,7 +381,7 @@ public class Menus
 		public String getItemId()
 		{
 			String configured = Core.instance.config().get(new Config.ConfigDefault<String>("menu_function_items.FUNC_PREVPAGE", null, null));
-			return configured != null ? configured : Core.isCauldron ? "minecraft:map:0" : Material.EMPTY_MAP.toString() + ":0";
+			return configured != null ? configured : Core.isCauldron ? "minecraft:map:0" : LegacyUtil.MAP_ID;
 		}
 
 		@Override
@@ -415,7 +416,7 @@ public class Menus
 		public String getItemId()
 		{
 			String configured = Core.instance.config().get(new Config.ConfigDefault<String>("menu_function_items.FUNC_NEXTPAGE", null, null));
-			return configured != null ? configured : Core.isCauldron ? "minecraft:map:0" : Material.EMPTY_MAP.toString() + ":0";
+			return configured != null ? configured : Core.isCauldron ? "minecraft:map:0" : LegacyUtil.MAP_ID;
 		}
 
 		@Override
